@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "bldd"
+version = "0.1.0"
+description = ""
+authors = ["Artyom Shaposhnikov <a.shaposhnikov@innopolis.university>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = "^0.15.3"
+lief = "^0.16.5"
+rich = "^14.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+bldd = "bldd.cli:app" 
