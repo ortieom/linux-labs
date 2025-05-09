@@ -153,9 +153,10 @@ static long int_stack_ioctl(struct file *filp, unsigned int cmd, unsigned long a
 
         mutex_lock(&stack->lock);
 
-        if (new_size < stack->size) {  // can't resize
-            ret = -EINVAL;
-            goto unlock;
+        if (new_size < stack->size) {
+            // updating stack size to point at the new last element
+            // following ones will be dropped after reallocation
+            stack->size = new_size;
         }
 
         new_data = krealloc(stack->data, sizeof(int) * new_size, GFP_KERNEL);
