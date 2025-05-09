@@ -12,8 +12,8 @@
 #define DEVICE_NAME "int_stack"
 #define CLASS_NAME "int_stack_class"
 
-#define USB_KEY_VENDOR_ID 0x0bda
-#define USB_KEY_PRODUCT_ID 0x8152
+#define USB_KEY_VENDOR_ID 0x090c
+#define USB_KEY_PRODUCT_ID 0x1000
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Artyom Shaposhnikov");
