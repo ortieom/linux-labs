@@ -27,7 +27,11 @@ int main(int argc, char *argv[]) {
 
     fd = open(DEVICE_PATH, O_RDWR);
     if (fd < 0) {
-        perror("Failed to open device");
+        if (errno == ENOENT) {
+            fprintf(stderr, "error: USB key not inserted\n");
+        } else {
+            perror("Failed to open device");
+        }
         return 1;
     }
 
